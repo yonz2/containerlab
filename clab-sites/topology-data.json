@@ -1,0 +1,511 @@
+{
+  "name": "sites",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-aec0c4ce4f69",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "mtu": 1500,
+        "external-access": true
+      }
+    }
+  },
+  "nodes": {
+    "access1": {
+      "index": "0",
+      "shortname": "access1",
+      "longname": "clab-sites-access1",
+      "fqdn": "access1.sites.io",
+      "group": "",
+      "labdir": "/home/yonz/containerlab/clab-sites/access1",
+      "kind": "sonic-vs",
+      "image": "docker-sonic-vs:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.9",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::9",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-aec0c4ce4f69",
+        "clab-node-group": "",
+        "clab-node-kind": "sonic-vs",
+        "clab-node-lab-dir": "/home/yonz/containerlab/clab-sites/access1",
+        "clab-node-name": "access1",
+        "clab-node-type": "",
+        "clab-owner": "yonz",
+        "clab-topo-file": "/home/yonz/containerlab/sites.clab.yml",
+        "containerlab": "sites"
+      },
+      "port-bindings": [
+      ]
+    },
+    "earth": {
+      "index": "1",
+      "shortname": "earth",
+      "longname": "clab-sites-earth",
+      "fqdn": "earth.sites.io",
+      "group": "",
+      "labdir": "/home/yonz/containerlab/clab-sites/earth",
+      "kind": "linux",
+      "image": "wbitt/network-multitool:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-aec0c4ce4f69",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/yonz/containerlab/clab-sites/earth",
+        "clab-node-name": "earth",
+        "clab-node-type": "",
+        "clab-owner": "yonz",
+        "clab-topo-file": "/home/yonz/containerlab/sites.clab.yml",
+        "containerlab": "sites"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 11443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 1180,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "0.0.0.0",
+          "host-port": 9100,
+          "port": 80,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "::",
+          "host-port": 9100,
+          "port": 80,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "linux11": {
+      "index": "2",
+      "shortname": "linux11",
+      "longname": "clab-sites-linux11",
+      "fqdn": "linux11.sites.io",
+      "group": "",
+      "labdir": "/home/yonz/containerlab/clab-sites/linux11",
+      "kind": "linux",
+      "image": "wbitt/network-multitool:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.8",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::8",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-aec0c4ce4f69",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/yonz/containerlab/clab-sites/linux11",
+        "clab-node-name": "linux11",
+        "clab-node-type": "",
+        "clab-owner": "yonz",
+        "clab-topo-file": "/home/yonz/containerlab/sites.clab.yml",
+        "containerlab": "sites"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 11443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 1180,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "0.0.0.0",
+          "host-port": 9111,
+          "port": 80,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "::",
+          "host-port": 9111,
+          "port": 80,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "linux12": {
+      "index": "3",
+      "shortname": "linux12",
+      "longname": "clab-sites-linux12",
+      "fqdn": "linux12.sites.io",
+      "group": "",
+      "labdir": "/home/yonz/containerlab/clab-sites/linux12",
+      "kind": "linux",
+      "image": "wbitt/network-multitool:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::4",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-aec0c4ce4f69",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/yonz/containerlab/clab-sites/linux12",
+        "clab-node-name": "linux12",
+        "clab-node-type": "",
+        "clab-owner": "yonz",
+        "clab-topo-file": "/home/yonz/containerlab/sites.clab.yml",
+        "containerlab": "sites"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "0.0.0.0",
+          "host-port": 9112,
+          "port": 80,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "::",
+          "host-port": 9112,
+          "port": 80,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 11443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 1180,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 443,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "linux13": {
+      "index": "4",
+      "shortname": "linux13",
+      "longname": "clab-sites-linux13",
+      "fqdn": "linux13.sites.io",
+      "group": "",
+      "labdir": "/home/yonz/containerlab/clab-sites/linux13",
+      "kind": "linux",
+      "image": "wbitt/network-multitool:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-aec0c4ce4f69",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/yonz/containerlab/clab-sites/linux13",
+        "clab-node-name": "linux13",
+        "clab-node-type": "",
+        "clab-owner": "yonz",
+        "clab-topo-file": "/home/yonz/containerlab/sites.clab.yml",
+        "containerlab": "sites"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 1180,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "0.0.0.0",
+          "host-port": 9113,
+          "port": 80,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "::",
+          "host-port": 9113,
+          "port": 80,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 11443,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "linux21": {
+      "index": "5",
+      "shortname": "linux21",
+      "longname": "clab-sites-linux21",
+      "fqdn": "linux21.sites.io",
+      "group": "",
+      "labdir": "/home/yonz/containerlab/clab-sites/linux21",
+      "kind": "linux",
+      "image": "wbitt/network-multitool:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.7",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::7",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-aec0c4ce4f69",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/yonz/containerlab/clab-sites/linux21",
+        "clab-node-name": "linux21",
+        "clab-node-type": "",
+        "clab-owner": "yonz",
+        "clab-topo-file": "/home/yonz/containerlab/sites.clab.yml",
+        "containerlab": "sites"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "0.0.0.0",
+          "host-port": 9121,
+          "port": 80,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "::",
+          "host-port": 9121,
+          "port": 80,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 11443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 1180,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "wan1": {
+      "index": "6",
+      "shortname": "wan1",
+      "longname": "clab-sites-wan1",
+      "fqdn": "wan1.sites.io",
+      "group": "",
+      "labdir": "/home/yonz/containerlab/clab-sites/wan1",
+      "kind": "sonic-vs",
+      "image": "docker-sonic-vs:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::5",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-aec0c4ce4f69",
+        "clab-node-group": "",
+        "clab-node-kind": "sonic-vs",
+        "clab-node-lab-dir": "/home/yonz/containerlab/clab-sites/wan1",
+        "clab-node-name": "wan1",
+        "clab-node-type": "",
+        "clab-owner": "yonz",
+        "clab-topo-file": "/home/yonz/containerlab/sites.clab.yml",
+        "containerlab": "sites"
+      },
+      "port-bindings": [
+      ]
+    },
+    "wan2": {
+      "index": "7",
+      "shortname": "wan2",
+      "longname": "clab-sites-wan2",
+      "fqdn": "wan2.sites.io",
+      "group": "",
+      "labdir": "/home/yonz/containerlab/clab-sites/wan2",
+      "kind": "sonic-vs",
+      "image": "docker-sonic-vs:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.6",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::6",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-aec0c4ce4f69",
+        "clab-node-group": "",
+        "clab-node-kind": "sonic-vs",
+        "clab-node-lab-dir": "/home/yonz/containerlab/clab-sites/wan2",
+        "clab-node-name": "wan2",
+        "clab-node-type": "",
+        "clab-owner": "yonz",
+        "clab-topo-file": "/home/yonz/containerlab/sites.clab.yml",
+        "containerlab": "sites"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "a": {
+        "node": "earth",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:52:d4:a0",
+        "peer": "z"
+      },
+      "z": {
+        "node": "wan1",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:98:df:75",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "earth",
+        "interface": "eth2",
+        "mac": "aa:c1:ab:05:cd:bf",
+        "peer": "z"
+      },
+      "z": {
+        "node": "wan2",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:3f:02:eb",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "wan1",
+        "interface": "eth2",
+        "mac": "aa:c1:ab:be:a5:74",
+        "peer": "z"
+      },
+      "z": {
+        "node": "access1",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:fd:0b:4d",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "wan1",
+        "interface": "eth3",
+        "mac": "aa:c1:ab:a0:4b:d5",
+        "peer": "z"
+      },
+      "z": {
+        "node": "linux11",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:d2:f1:bd",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "access1",
+        "interface": "eth2",
+        "mac": "aa:c1:ab:16:ca:2e",
+        "peer": "z"
+      },
+      "z": {
+        "node": "linux12",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:01:9b:33",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "access1",
+        "interface": "eth3",
+        "mac": "aa:c1:ab:cc:f7:88",
+        "peer": "z"
+      },
+      "z": {
+        "node": "linux13",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:5f:90:fc",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "wan2",
+        "interface": "eth2",
+        "mac": "aa:c1:ab:c7:d8:ee",
+        "peer": "z"
+      },
+      "z": {
+        "node": "linux21",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:04:18:0a",
+        "peer": "a"
+      }
+    }
+  ]
+}

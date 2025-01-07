@@ -1,7 +1,8 @@
-# (c) 2025 Yonz
+# Author: Yonz / Net-Innovate Solutions GmbH
+# License: The Unlicense
 # containerlab LAB file defining a simple wan location, with one sonic switche and three linux clients. 
 # The sonic01 nodes needs an additional WAN interface that connects to a WAN Router provided by an ISP
-# The tw
+# 
 #
 name: sites
 topology:

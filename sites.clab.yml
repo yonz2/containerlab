@@ -2,7 +2,13 @@
 # License: The Unlicense
 # containerlab LAB file defining a simple wan location, with one sonic switche and three linux clients. 
 # The sonic01 nodes needs an additional WAN interface that connects to a WAN Router provided by an ISP
-# 
+#  __clabNodeName__
+
+      bind:
+        - ./frr/__clabNodeName__/daemons:/etc/frr/daemons
+        - ./frr/__clabNodeName__/frr.conf:/etc/frr/frr.conf  
+
+
 #
 name: sites
 topology:
@@ -15,16 +21,20 @@ topology:
         - "ip addr add 192.168.100.100/24 dev eth1"
       ports:
         - 9100:80
+      group: "Cloud-WAN"
 # Switches. Sonic 11 Core SW Site 1, Sonic12 Dist. Switch Site 1. Sonic 21 Core Sw. Site 2
     wan1:
       kind: sonic-vs
       image: docker-sonic-vs:latest
+      group: "Site 1"
     access1:
       kind: sonic-vs
       image: docker-sonic-vs:latest
+      group: "Site 1"
     wan2:
       kind: sonic-vs
       image: docker-sonic-vs:latest
+      group: "Site 2"
 #
 # Linux Clients (11-13 : Site 1; 21: Site 2)            
     linux11:
@@ -34,6 +44,7 @@ topology:
         - "ip addr add 192.168.10.11/24 dev eth1"
       ports:
         - 9111:80
+      group: "Site 1"        
     linux12:
       kind: linux
       image: wbitt/network-multitool:latest
@@ -41,6 +52,7 @@ topology:
         - "ip addr add 192.168.20.12/24 dev eth1"
       ports:
         - 9112:80
+      group: "Site 1"        
     linux13:
       kind: linux
       image: wbitt/network-multitool:latest
@@ -48,25 +60,29 @@ topology:
         - "ip addr add 192.168.20.13/24 dev eth1"
       ports:
         - 9113:80
+      group: "Site 1"        
     linux21:
       kind: linux
       image: wbitt/network-multitool:latest
       exec:
         - "ip addr add 192.168.30.21/24 dev eth1"
       ports:
-        - 9121:80        
+        - 9121:80
+      group: "Site 2"                
 
   links:
-    # WAN Link from earrh to eth1 on wan switches (will be replaced in config with a ZeroTrust Tunnel)
+    # WAN Link from earth to eth1 on wan switches (will be replaced in config with a ZeroTrust Tunnel)
+    # Note: eth1 on sonic (Front Panel Port) is used as a Dummy just to get things properly visualized
     - endpoints: ["earth:eth1", "wan1:eth1"] 
     - endpoints: ["earth:eth2", "wan2:eth1"] 
     #
-    # Connection to an access swirch (small network, no distribution SW needed) 
-    - endpoints: ["wan1:eth2", "access1:eth1"]
+    # Connection to an access switch (small network, no distribution SW needed) 
+    # (eth1 - front-panel - is not uconnected on Access1)
+    - endpoints: ["wan1:eth2", "access1:eth2"]
     # Connect the clients
     - endpoints: ["wan1:eth3", "linux11:eth1"]
-    - endpoints: ["access1:eth2", "linux12:eth1"]    
-    - endpoints: ["access1:eth3", "linux13:eth1"]
+    - endpoints: ["access1:eth3", "linux12:eth1"]    
+    - endpoints: ["access1:eth4", "linux13:eth1"]
     #
     # Second site, one switch and one client.
     - endpoints: ["wan2:eth2", "linux21:eth1"]

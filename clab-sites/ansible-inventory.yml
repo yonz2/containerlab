@@ -8,20 +8,20 @@ all:
     linux:
       hosts:
         clab-sites-earth:
-          ansible_host: 172.20.20.3
-        clab-sites-linux11:
           ansible_host: 172.20.20.8
+        clab-sites-linux11:
+          ansible_host: 172.20.20.5
         clab-sites-linux12:
           ansible_host: 172.20.20.4
         clab-sites-linux13:
-          ansible_host: 172.20.20.2
-        clab-sites-linux21:
           ansible_host: 172.20.20.7
+        clab-sites-linux21:
+          ansible_host: 172.20.20.3
     sonic-vs:
       hosts:
         clab-sites-access1:
           ansible_host: 172.20.20.9
         clab-sites-wan1:
-          ansible_host: 172.20.20.5
+          ansible_host: 172.20.20.2
         clab-sites-wan2:
           ansible_host: 172.20.20.6

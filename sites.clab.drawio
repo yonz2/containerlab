@@ -60,15 +60,15 @@
       <mxCell style="endArrow=none;jumpStyle=gap;entryY=0;exitY=1;entryX=0.5;exitX=0.5;" edge="1" parent="1" source="clab-sites-earth" target="clab-sites-wan2">
           <mxGeometry relative="1" as="geometry" />
       </mxCell>
-    </object><mxCell id="link_id:link:clab-sites-wan1:eth2:clab-sites-access1:eth1-src" value="eth2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];;" vertex="1" connectable="0" parent="link_id:link:clab-sites-wan1:eth2:clab-sites-access1:eth1">
+    </object><mxCell id="link_id:link:clab-sites-wan1:eth2:clab-sites-access1:eth2-src" value="eth2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];;" vertex="1" connectable="0" parent="link_id:link:clab-sites-wan1:eth2:clab-sites-access1:eth2">
       <mxGeometry x="-0.5" relative="1" as="geometry">
         <mxPoint as="offset" />
       </mxGeometry>
-    </mxCell><mxCell id="link_id:link:clab-sites-wan1:eth2:clab-sites-access1:eth1-trgt" value="eth1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];;" vertex="1" connectable="0" parent="link_id:link:clab-sites-wan1:eth2:clab-sites-access1:eth1">
+    </mxCell><mxCell id="link_id:link:clab-sites-wan1:eth2:clab-sites-access1:eth2-trgt" value="eth2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];;" vertex="1" connectable="0" parent="link_id:link:clab-sites-wan1:eth2:clab-sites-access1:eth2">
       <mxGeometry x="0.5" relative="-1" as="geometry">
         <mxPoint as="offset" />
       </mxGeometry>
-    </mxCell><object id="link_id:link:clab-sites-wan1:eth2:clab-sites-access1:eth1" label="" src_label="eth2" trgt_label="eth1" source="clab-sites-wan1" target="clab-sites-access1">
+    </mxCell><object id="link_id:link:clab-sites-wan1:eth2:clab-sites-access1:eth2" label="" src_label="eth2" trgt_label="eth2" source="clab-sites-wan1" target="clab-sites-access1">
       <mxCell style="endArrow=none;jumpStyle=gap;entryY=0;exitY=1;entryX=0.5;exitX=0.5;" edge="1" parent="1" source="clab-sites-wan1" target="clab-sites-access1">
           <mxGeometry relative="1" as="geometry" />
       </mxCell>
@@ -84,27 +84,27 @@
       <mxCell style="endArrow=none;jumpStyle=gap;entryY=0;exitY=1;entryX=0.5;exitX=0.5;" edge="1" parent="1" source="clab-sites-wan1" target="clab-sites-linux11">
           <mxGeometry relative="1" as="geometry" />
       </mxCell>
-    </object><mxCell id="link_id:link:clab-sites-access1:eth2:clab-sites-linux12:eth1-src" value="eth2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];;" vertex="1" connectable="0" parent="link_id:link:clab-sites-access1:eth2:clab-sites-linux12:eth1">
+    </object><mxCell id="link_id:link:clab-sites-access1:eth3:clab-sites-linux12:eth1-src" value="eth3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];;" vertex="1" connectable="0" parent="link_id:link:clab-sites-access1:eth3:clab-sites-linux12:eth1">
       <mxGeometry x="-0.5" relative="1" as="geometry">
         <mxPoint as="offset" />
       </mxGeometry>
-    </mxCell><mxCell id="link_id:link:clab-sites-access1:eth2:clab-sites-linux12:eth1-trgt" value="eth1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];;" vertex="1" connectable="0" parent="link_id:link:clab-sites-access1:eth2:clab-sites-linux12:eth1">
+    </mxCell><mxCell id="link_id:link:clab-sites-access1:eth3:clab-sites-linux12:eth1-trgt" value="eth1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];;" vertex="1" connectable="0" parent="link_id:link:clab-sites-access1:eth3:clab-sites-linux12:eth1">
       <mxGeometry x="0.5" relative="-1" as="geometry">
         <mxPoint as="offset" />
       </mxGeometry>
-    </mxCell><object id="link_id:link:clab-sites-access1:eth2:clab-sites-linux12:eth1" label="" src_label="eth2" trgt_label="eth1" source="clab-sites-access1" target="clab-sites-linux12">
+    </mxCell><object id="link_id:link:clab-sites-access1:eth3:clab-sites-linux12:eth1" label="" src_label="eth3" trgt_label="eth1" source="clab-sites-access1" target="clab-sites-linux12">
       <mxCell style="endArrow=none;jumpStyle=gap;entryY=0;exitY=1;entryX=0.5;exitX=0.5;" edge="1" parent="1" source="clab-sites-access1" target="clab-sites-linux12">
           <mxGeometry relative="1" as="geometry" />
       </mxCell>
-    </object><mxCell id="link_id:link:clab-sites-access1:eth3:clab-sites-linux13:eth1-src" value="eth3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];;" vertex="1" connectable="0" parent="link_id:link:clab-sites-access1:eth3:clab-sites-linux13:eth1">
+    </object><mxCell id="link_id:link:clab-sites-access1:eth4:clab-sites-linux13:eth1-src" value="eth4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];;" vertex="1" connectable="0" parent="link_id:link:clab-sites-access1:eth4:clab-sites-linux13:eth1">
       <mxGeometry x="-0.5" relative="1" as="geometry">
         <mxPoint as="offset" />
       </mxGeometry>
-    </mxCell><mxCell id="link_id:link:clab-sites-access1:eth3:clab-sites-linux13:eth1-trgt" value="eth1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];;" vertex="1" connectable="0" parent="link_id:link:clab-sites-access1:eth3:clab-sites-linux13:eth1">
+    </mxCell><mxCell id="link_id:link:clab-sites-access1:eth4:clab-sites-linux13:eth1-trgt" value="eth1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];;" vertex="1" connectable="0" parent="link_id:link:clab-sites-access1:eth4:clab-sites-linux13:eth1">
       <mxGeometry x="0.5" relative="-1" as="geometry">
         <mxPoint as="offset" />
       </mxGeometry>
-    </mxCell><object id="link_id:link:clab-sites-access1:eth3:clab-sites-linux13:eth1" label="" src_label="eth3" trgt_label="eth1" source="clab-sites-access1" target="clab-sites-linux13">
+    </mxCell><object id="link_id:link:clab-sites-access1:eth4:clab-sites-linux13:eth1" label="" src_label="eth4" trgt_label="eth1" source="clab-sites-access1" target="clab-sites-linux13">
       <mxCell style="endArrow=none;jumpStyle=gap;entryY=0;exitY=1;entryX=0.5;exitX=0.5;" edge="1" parent="1" source="clab-sites-access1" target="clab-sites-linux13">
           <mxGeometry relative="1" as="geometry" />
       </mxCell>

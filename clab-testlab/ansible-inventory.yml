@@ -9,7 +9,9 @@ all:
       hosts:
         clab-testlab-linux11:
           ansible_host: 172.20.20.2
+        clab-testlab-wan-bridge:
+          ansible_host: 172.20.20.3
     sonic-vs:
       hosts:
         clab-testlab-wan1:
-          ansible_host: 172.20.20.3
+          ansible_host: 172.20.20.4

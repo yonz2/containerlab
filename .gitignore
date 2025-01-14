@@ -1,6 +1,6 @@
-/.sites.clab.yml.bak
-**/ca/
- 
-
+/.*.bak
+/frr
+/schtuff 
+/clab-*
 
 

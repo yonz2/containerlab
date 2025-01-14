@@ -8,34 +8,34 @@ all:
     linux:
       hosts:
         clab-sites-earth:
-          ansible_host: 172.20.20.14
-        clab-sites-iot11:
-          ansible_host: 172.20.20.4
-        clab-sites-iot12:
           ansible_host: 172.20.20.5
-        clab-sites-iot21:
+        clab-sites-iot11:
           ansible_host: 172.20.20.9
+        clab-sites-iot12:
+          ansible_host: 172.20.20.3
+        clab-sites-iot21:
+          ansible_host: 172.20.20.10
         clab-sites-iot22:
           ansible_host: 172.20.20.13
         clab-sites-linux11:
-          ansible_host: 
+          ansible_host: 172.20.20.16
         clab-sites-linux12:
-          ansible_host: 172.20.20.8
+          ansible_host: 172.20.20.14
         clab-sites-linux13:
-          ansible_host: 
+          ansible_host: 172.20.20.2
         clab-sites-linux21:
-          ansible_host: 172.20.20.6
+          ansible_host: 172.20.20.7
         clab-sites-linux22:
-          ansible_host: 
-        clab-sites-linux23:
           ansible_host: 172.20.20.11
+        clab-sites-linux23:
+          ansible_host: 172.20.20.4
     sonic-vs:
       hosts:
         clab-sites-access1:
-          ansible_host: 172.20.20.7
+          ansible_host: 172.20.20.15
         clab-sites-access2:
-          ansible_host: 172.20.20.3
+          ansible_host: 172.20.20.12
         clab-sites-wan1:
-          ansible_host: 172.20.20.10
+          ansible_host: 172.20.20.8
         clab-sites-wan2:
-          ansible_host: 172.20.20.2
+          ansible_host: 172.20.20.6

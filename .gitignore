@@ -1,6 +1,10 @@
 /.*.bak
-/frr
 /schtuff 
-/clab-*
+/clab-*/.tls/
+/.*.swp
+/.*.swo
+
+
+
 
 

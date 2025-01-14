@@ -138,7 +138,7 @@ topology:
       exec:
         - "ip addr add 10.2.1.21/24 dev eth1"
       ports:
-        - 9111:80
+        - 9121:80
       group: "Site 2"        
     linux22:
       kind: linux
@@ -146,7 +146,7 @@ topology:
       exec:
         - "ip addr add 10.2.10.22/24 dev eth1"
       ports:
-        - 9112:80
+        - 9122:80
       group: "Site 2"        
     linux23:
       kind: linux
@@ -154,7 +154,7 @@ topology:
       exec:
         - "ip addr add 10.2.20.23/24 dev eth1"
       ports:
-        - 9113:80
+        - 9123:80
       group: "Site 2"   
 
     # IOT Devices on Site 1 (represented here by a simple alpine container)

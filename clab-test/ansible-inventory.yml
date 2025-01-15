@@ -7,11 +7,9 @@ all:
   children:
     linux:
       hosts:
-        clab-testlab-linux11:
-          ansible_host: 172.20.20.2
-        clab-testlab-wan-bridge:
+        clab-test-linux11:
           ansible_host: 172.20.20.3
     sonic-vs:
       hosts:
-        clab-testlab-wan1:
-          ansible_host: 172.20.20.4
+        clab-test-wan1:
+          ansible_host: 172.20.20.2

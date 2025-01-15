@@ -1,0 +1,109 @@
+{
+  "name": "test",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-db41e8327195",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "mtu": 1500,
+        "external-access": true
+      }
+    }
+  },
+  "nodes": {
+    "linux11": {
+      "index": "0",
+      "shortname": "linux11",
+      "longname": "clab-test-linux11",
+      "fqdn": "linux11.test.io",
+      "group": "Site 1",
+      "labdir": "/home/yonz/containerlab/clab-test/linux11",
+      "kind": "linux",
+      "image": "alpine-netutils",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-db41e8327195",
+        "clab-node-group": "Site 1",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/yonz/containerlab/clab-test/linux11",
+        "clab-node-name": "linux11",
+        "clab-node-type": "",
+        "clab-owner": "yonz",
+        "clab-topo-file": "/home/yonz/containerlab/test.clab.yml",
+        "containerlab": "test"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 22,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "wan1": {
+      "index": "1",
+      "shortname": "wan1",
+      "longname": "clab-test-wan1",
+      "fqdn": "wan1.test.io",
+      "group": "Site 1",
+      "labdir": "/home/yonz/containerlab/clab-test/wan1",
+      "kind": "sonic-vs",
+      "image": "sonic-vs-ssh:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-db41e8327195",
+        "clab-node-group": "Site 1",
+        "clab-node-kind": "sonic-vs",
+        "clab-node-lab-dir": "/home/yonz/containerlab/clab-test/wan1",
+        "clab-node-name": "wan1",
+        "clab-node-type": "",
+        "clab-owner": "yonz",
+        "clab-topo-file": "/home/yonz/containerlab/test.clab.yml",
+        "containerlab": "test"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 22,
+          "protocol": "tcp"
+        }
+      ]
+    }
+  },
+  "links": [
+    {
+      "a": {
+        "node": "wan1",
+        "interface": "Ethernet8",
+        "mac": "aa:c1:ab:0c:8c:2d",
+        "peer": "z"
+      },
+      "z": {
+        "node": "linux11",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:c3:01:15",
+        "peer": "a"
+      }
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "name": "ralf",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-db41e8327195",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "mtu": 1500,
+        "external-access": true
+      }
+    }
+  },
+  "nodes": {
+    "linux11": {
+      "index": "0",
+      "shortname": "linux11",
+      "longname": "clab-ralf-linux11",
+      "fqdn": "linux11.ralf.io",
+      "group": "Site 1",
+      "labdir": "/home/yonz/containerlab/clab-ralf/linux11",
+      "kind": "linux",
+      "image": "wbitt/network-multitool:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::4",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-db41e8327195",
+        "clab-node-group": "Site 1",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/yonz/containerlab/clab-ralf/linux11",
+        "clab-node-name": "linux11",
+        "clab-node-type": "",
+        "clab-owner": "yonz",
+        "clab-topo-file": "/home/yonz/containerlab/ralf.clab.yml",
+        "containerlab": "ralf"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 11443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 1180,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "0.0.0.0",
+          "host-port": 9111,
+          "port": 80,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "::",
+          "host-port": 9111,
+          "port": 80,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "wan1": {
+      "index": "1",
+      "shortname": "wan1",
+      "longname": "clab-ralf-wan1",
+      "fqdn": "wan1.ralf.io",
+      "group": "",
+      "labdir": "/home/yonz/containerlab/clab-ralf/wan1",
+      "kind": "sonic-vs",
+      "image": "docker-sonic-vs:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::5",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-db41e8327195",
+        "clab-node-group": "",
+        "clab-node-kind": "sonic-vs",
+        "clab-node-lab-dir": "/home/yonz/containerlab/clab-ralf/wan1",
+        "clab-node-name": "wan1",
+        "clab-node-type": "",
+        "clab-owner": "yonz",
+        "clab-topo-file": "/home/yonz/containerlab/ralf.clab.yml",
+        "containerlab": "ralf"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "a": {
+        "node": "wan1",
+        "interface": "Ethernet8",
+        "mac": "aa:c1:ab:24:e8:65",
+        "peer": "z"
+      },
+      "z": {
+        "node": "linux11",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:e6:ca:c0",
+        "peer": "a"
+      }
+    }
+  ]
+}

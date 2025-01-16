@@ -17,11 +17,11 @@ LABEL \
 
 RUN apt update &&  apt install -y \
     sudo \
+    iproute2 \
+    net-tools \
     wget \
     curl \
     openssh-server \
-    python3 \
-    python3-pip \
     mosquitto-clients && rm -rf /var/lib/apt/lists/*
 
 
@@ -45,8 +45,6 @@ RUN /usr/bin/ssh-keygen -A
 RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
-# Make SSD start at boot time
-RUN systemctl enable ssh.service
 
 # Create the .ssh directories and copy the authorized_keys file
 RUN mkdir -p /home/admin/.ssh && \
@@ -58,6 +56,7 @@ RUN mkdir -p /home/admin/.ssh && \
 
 COPY authorized_keys /home/admin/.ssh/authorized_keys
 COPY authorized_keys /root/.ssh/authorized_keys
+COPY start_sshd.sh /usr/local/bin/start_sshd.sh
 
 # Set the correct permissions on the authorized_keys files
 RUN chown admin:admin /home/admin/.ssh/authorized_keys && \

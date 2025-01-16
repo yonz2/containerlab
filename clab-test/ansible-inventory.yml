@@ -8,8 +8,8 @@ all:
     linux:
       hosts:
         clab-test-linux11:
-          ansible_host: 172.20.20.3
+          ansible_host: 172.20.20.2
     sonic-vs:
       hosts:
         clab-test-wan1:
-          ansible_host: 172.20.20.2
+          ansible_host: 172.20.20.3

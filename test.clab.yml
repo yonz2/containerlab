@@ -12,18 +12,24 @@ topology:
     linux:
       type: linux
       image: debian-slim-netutils:latest
+    sonic-vs:
+      type: sonic
+      image: docker-sonic-vs:latest # docker.io/sonicdev/sonic-p4:latest
   nodes:
     wan1:
       kind: sonic-vs
-      image: sonic-vs-ssh:latest
       group: "Site 1"
       binds:
         - ./frr/wan1/daemons:/etc/frr/daemons
         - ./frr/wan1/frr.conf:/etc/frr/frr.conf
+
     linux11:
       kind: linux
       exec:
+        # Add an IP address to the eth1 interface
         - "ip addr add 192.168.10.11/24 dev eth1"
+        # Start the sshd Daemon, letting it run in the background, listening on the eth0 (Management) interface only
+        - "/usr/local/bin/start_sshd.sh"
       group: "Site 1"
   links:
     - endpoints: ["wan1:Ethernet8", "linux11:eth1"]

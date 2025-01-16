@@ -8,6 +8,10 @@ name: test
 topology:
   defaults:
     user: root # admin user will be used for all nodes unless set on kind or node levels
+  kinds:
+    linux:
+      type: linux
+      image: debian-slim-netutils:latest
   nodes:
     wan1:
       kind: sonic-vs
@@ -18,7 +22,6 @@ topology:
         - ./frr/wan1/frr.conf:/etc/frr/frr.conf
     linux11:
       kind: linux
-      image: alpine-netutils
       exec:
         - "ip addr add 192.168.10.11/24 dev eth1"
       group: "Site 1"

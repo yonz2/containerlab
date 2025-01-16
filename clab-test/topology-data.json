@@ -25,7 +25,7 @@
       "group": "Site 1",
       "labdir": "/home/yonz/containerlab/clab-test/linux11",
       "kind": "linux",
-      "image": "alpine-netutils",
+      "image": "debian-slim-netutils:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
       "mgmt-ipv4-address": "172.20.20.3",
@@ -39,7 +39,7 @@
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/yonz/containerlab/clab-test/linux11",
         "clab-node-name": "linux11",
-        "clab-node-type": "",
+        "clab-node-type": "linux",
         "clab-owner": "yonz",
         "clab-topo-file": "/home/yonz/containerlab/test.clab.yml",
         "containerlab": "test"
@@ -95,13 +95,13 @@
       "a": {
         "node": "wan1",
         "interface": "Ethernet8",
-        "mac": "aa:c1:ab:0c:8c:2d",
+        "mac": "aa:c1:ab:f5:eb:02",
         "peer": "z"
       },
       "z": {
         "node": "linux11",
         "interface": "eth1",
-        "mac": "aa:c1:ab:c3:01:15",
+        "mac": "aa:c1:ab:8b:50:d0",
         "peer": "a"
       }
     }

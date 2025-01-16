@@ -27,7 +27,7 @@ RUN apt update &&  apt install -y \
 
 # Add admin user - Alternative to root, can be used as "client" user during testing;
 # add to sudo group then set password (also root password)
-RUN useradd -D -u 1000 -s /bin/bash admin && \
+RUN useradd -m -u 1000 -s /bin/bash admin && \
     echo "admin ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
     echo -n 'admin:SONiC@2025' | chpasswd && \
     echo -n 'root:SONiC@2025' | chpasswd

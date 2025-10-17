@@ -1,6 +1,8 @@
 /.*.bak
 clab-*/
 *.tar
+*.tar.gz
+
 
 
 

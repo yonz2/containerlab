@@ -93,7 +93,12 @@ To transfer this Docker image to another system without using a container regist
 Use the `docker save` command to create a `.tar` file from the image.
 
 ```bash
+# Save the image
 docker save -o my-zerotier.tar my-zerotier:latest
+
+# Compress the tarball with gzip
+gzip my-zerotier.tar
+
 ```
 
 This command packages the image `my-zerotier:latest` into a file named `my-zerotier.tar` in your current directory.
@@ -103,7 +108,11 @@ This command packages the image `my-zerotier:latest` into a file named `my-zerot
 Copy the `.tar` file to the target machine and use the `docker load` command to import it into the local Docker image cache.
 
 ```bash
+# Decompress the file
+gunzip my-zerotier.tar.gz
+
 docker load -i my-zerotier.tar
+
 ```
 
 After loading, you can run the container on the new host as described in the **Usage** section.

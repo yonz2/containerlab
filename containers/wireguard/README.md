@@ -2,7 +2,7 @@
 
 This document outlines the procedure for deploying the official `linuxserver/wireguard` Docker image within this project, specifically for use on a SONiC virtual machine.
 
-This method does not involve building a new image from a `Dockerfile`. Instead, the pre-built image is pulled from Docker Hub, archived, and then transferred to the target system where it is loaded into the local Docker environment.
+This method does not involve building a new image from a `Dockerfile`. Instead, the pre-built image is pulled from Docker Hub, archived, **compressed**, and then transferred to the target system where it is **decompressed** and loaded into the local Docker environment.
 
 ---
 
@@ -17,7 +17,7 @@ The image used is the standard, unmodified `linuxserver/wireguard` image.
 
 ## Deployment Process
 
-The deployment involves four main steps, moving the image from an internet-connected machine to the isolated SONiC VM.
+The deployment involves several steps, moving the image from an internet-connected machine to the isolated SONiC VM.
 
 ### 1. Pull the Image
 
@@ -27,24 +27,32 @@ On a machine with internet access and Docker installed, pull the latest version 
 docker pull linuxserver/wireguard:latest
 ```
 
-### 2. Save the Image to a Tar Archive
+### 2. Save and Compress the Image
 
-Package the pulled image into a `.tar` file. This allows for easy transfer.
+First, package the pulled image into a `.tar` file. Then, compress this archive using `gzip` to reduce its size for faster transfer.
 
 ```bash
+# Save the image to a tarball
 docker save -o wireguard.tar linuxserver/wireguard:latest
+
+# Compress the tarball with gzip
+gzip wireguard.tar
 ```
-This command creates a file named `wireguard.tar` in your current directory.
+This process will create a single compressed file named `wireguard.tar.gz`.
 
 ### 3. Transfer the Archive
 
-Copy the `wireguard.tar` file to the target SONiC VM. You can use tools like `scp`, a shared folder, or any other file transfer method suitable for your environment.
+Copy the compressed `wireguard.tar.gz` file to the target SONiC VM. You can use tools like `scp`, a shared folder, or any other file transfer method suitable for your environment.
 
-### 4. Load the Image on the SONiC Host
+### 4. Decompress and Load the Image
 
-Once the archive is on the SONiC VM, use the `docker load` command to import the image into the local Docker image cache.
+Once the archive is on the SONiC VM, you must first decompress it and then load the resulting `.tar` file into Docker.
 
 ```bash
+# Decompress the file
+gunzip wireguard.tar.gz
+
+# Load the image from the tar archive
 docker load -i wireguard.tar
 ```
 

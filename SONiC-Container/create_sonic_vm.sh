@@ -16,6 +16,46 @@
 #   sudo ./create_sonic_vm.sh /path/to/your-image.qcow2
 # ==============================================================================
 
+# ==============================================================================
+# Host System Prerequisites (Ubuntu/Debian)
+#
+# Before running this script, your server must be set up as a KVM virtualization
+# host. Here are the steps to install the necessary packages.
+#
+#
+# 0. Network Bridge Setup:
+#    This script assumes a network bridge named 'br0' exists for VM connectivity.
+#    You can create one using 'netplan'.
+#
+#    See: 'enable-network-bridge.sh' script. 
+#
+# 1. Update your package lists:
+#    sudo apt-get update
+#
+# 2. Install KVM, libvirt, and management tools:
+#    sudo apt-get install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst
+#
+#    - qemu-kvm: The core hypervisor that runs the virtual machines.
+#    - libvirt-daemon-system: The background service (daemon) that manages VMs.
+#    - libvirt-clients: Provides the command-line tool 'virsh' for managing VMs.
+#    - bridge-utils: Provides tools to create and manage network bridges (e.g., br0).
+#    - virtinst: Provides the 'virt-install' command used in this script.
+#
+# 3. Add your user to the required groups (Optional but Recommended):
+#    To manage VMs without using 'sudo' for every command, add your user
+#    to the 'libvirt' and 'kvm' groups.
+#
+#    sudo adduser $(whoami) libvirt
+#    sudo adduser $(whoami) kvm
+#
+#    IMPORTANT: You must log out and log back in for these group changes to take effect.
+#
+# 4. Verify the installation:
+#    Check that the libvirt service is active and running.
+#    sudo systemctl status libvirtd
+#
+# ==============================================================================
+
 # --- VM Configuration ---
 VM_NAME="sonic-vm"
 RAM_MB="4096"        # Memory in Megabytes (4GB is recommended for SONiC)

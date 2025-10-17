@@ -1,6 +1,7 @@
 /.*.bak
-/schtuff 
-clab-*/.tls/
+clab-*/
+*.tar
+
 
 
 

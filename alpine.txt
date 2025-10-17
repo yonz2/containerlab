@@ -1,2 +1,0 @@
-apk add bind-tools dhclient net-tools net-tools bridge-utils ifupdown-ng iputils iproute2-minimal netcat-openbsd traceroute wget 
-
